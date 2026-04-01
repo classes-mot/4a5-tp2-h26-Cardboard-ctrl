@@ -7,4 +7,5 @@ const jeuxSchema = new mongoose.Schema({
     dureeMinutes: Number,
 });
 
-export const Jeu = mongoose.model('Jeu', jeuxSchema);
+const Jeu = mongoose.model('Jeu', jeuxSchema);
+export default Jeu;

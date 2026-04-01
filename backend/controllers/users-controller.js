@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-import User from '../models/user.js';
-import HttpError from '../handler/http-error.js';
+import User from '../models/users.js';
+import HttpError from '../util/http-error.js';
 
 const registerUser = async (req, res, next) => {
     console.log('registering');

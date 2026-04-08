@@ -1,0 +1,231 @@
+{
+  "info": {
+    "_postman_id": "2e3e9ca3-3526-4c0b-9b80-7a25232f7c78",
+    "name": "TP2_WilliamLuisRoux",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52734843",
+    "_collection_link": "https://go.postman.co/collection/52734843-2e3e9ca3-3526-4c0b-9b80-7a25232f7c78?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/api/jeux",
+      "item": [
+        {
+          "name": "Add Jeu",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"titre\" : \"Monopoly\",\r\n    \"category\" : \"Famille\",\r\n    \"nbJoueurs\" : \"2-4\",\r\n    \"dureeMinutes\" : 300\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{jeux_url}}/add",
+              "host": [
+                "{{jeux_url}}"
+              ],
+              "path": [
+                "add"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Jeux",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{jeux_url}}/read",
+              "host": [
+                "{{jeux_url}}"
+              ],
+              "path": [
+                "read"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Jeu (ID)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{jeux_url}}/:jeu",
+              "host": [
+                "{{jeux_url}}"
+              ],
+              "path": [
+                ":jeu"
+              ],
+              "variable": [
+                {
+                  "key": "jeu",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "MAJ Jeu",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"titre\" : \"Uno\",\r\n    \"category\" : \"Cartes\",\r\n    \"nbJoueurs\" : \"2-6\",\r\n    \"dureeMinutes\" : 30\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{jeux_url}}/69cd84c27761c69fa226c5b6",
+              "host": [
+                "{{jeux_url}}"
+              ],
+              "path": [
+                "69cd84c27761c69fa226c5b6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Supprimer Jeu",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{jeux_url}}/:jeu",
+              "host": [
+                "{{jeux_url}}"
+              ],
+              "path": [
+                ":jeu"
+              ],
+              "variable": [
+                {
+                  "key": "jeu",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OWQ2ODAwOGVlNmI3MmQwYTFiNTJjMjkiLCJlbWFpbCI6Im5uQG91aS5jb20iLCJpYXQiOjE3NzU2NjUxNjQsImV4cCI6MTc3NTY2ODc2NH0.vVPKxENXFKjgV8lMmLqWFR-UoWMAdhOPhiUAgsWSERY",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "/api/users",
+      "item": [
+        {
+          "name": "Inscription (USER)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{users_url}}/register",
+              "host": [
+                "{{users_url}}"
+              ],
+              "path": [
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Connexion (USER)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\" : \"non@oui.com\",\r\n    \"password\" : \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{users_url}}/login",
+              "host": [
+                "{{users_url}}"
+              ],
+              "path": [
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

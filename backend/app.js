@@ -1,7 +1,6 @@
 import express from 'express';
 import jeuxRoutes from './routes/jeux-routes.js';
 import usersRoutes from './routes/users-routes.js';
-// Importer le gestionnaire d'erreurs
 import errorHandler from './handler/error-handler.js';
 import { connectDB } from './util/bd.js';
 
